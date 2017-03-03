@@ -7,15 +7,19 @@ let projectController = {
 
     getAllProjectsandStudents: function (req, res) {
 
-        Student.paginate({},{page :v , limit:10},function (err, result1) {
-             Work.find(function (err, Tables) {
-                res.render('client-view',{"studentTables":result1.docs,Tables,v} );
+
+ Student.find(function (err, studentTables) {
+         Work.find(function (err, Tables) {
+               res.render('client-view', { studentTables, Tables });
+
 
             })
 
         });
        
     },
+
+
 
   
 

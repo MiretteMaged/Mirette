@@ -4,7 +4,7 @@ var multer=require('multer');
 var mongoosePaginate = require('mongoose-paginate');
 var projectController = require('./controllers/projectController');
 var storage=multer.diskStorage({destination:function(req,file,cb){
-    cb(null,'/home/mirette/Desktop/SE-Mini-Project-Mirette/uploads')},filename:function(req,file,cb){
+    cb(null,' ./uploads')},filename:function(req,file,cb){
         cb(null,file.originalname )}});
         var upload=multer({storage:storage});
 
